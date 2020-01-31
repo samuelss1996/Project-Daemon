@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JumpBehaviour : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class JumpBehaviour : MonoBehaviour
     public float jumpVelocity = 15f;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 10f;
+    public float coyoteTime;
+
+    public Text coyoteDebug;
 
     // Refs
     private Rigidbody2D rb;
@@ -16,6 +20,8 @@ public class JumpBehaviour : MonoBehaviour
     // State
     private bool jumpPressed = false;
     private bool holdingJump = false;
+    private bool previouslyGrounded = false;
+    private bool canCoyote = false;
 
     private void Awake()
     {
@@ -35,13 +41,21 @@ public class JumpBehaviour : MonoBehaviour
         {
             holdingJump = false;
         }
+
+        coyoteDebug.text = $"Coyote: {canCoyote}";
     }
 
     private void FixedUpdate()
     {
-        if(jumpPressed && gCheck.grounded && (FindObjectOfType<DialogUI>()?.isFinsihed ?? true))
+        if(previouslyGrounded && !gCheck.grounded)
+        {
+            StartCoroutine(CoyoteTimeCR());
+        }
+
+        if(jumpPressed && CanJump())
         {
             rb.velocity = Vector2.up * jumpVelocity;
+            canCoyote = false;
         }
 
         if (rb.velocity.y < 0)
@@ -53,7 +67,22 @@ public class JumpBehaviour : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
         }
 
+        previouslyGrounded = gCheck.grounded;
         gCheck.grounded = false;
         jumpPressed = false;
+    }
+
+    private IEnumerator CoyoteTimeCR()
+    {
+        canCoyote = true;
+        yield return new WaitForSeconds(coyoteTime);
+        canCoyote = false;
+    }
+
+    private bool CanJump()
+    {
+        bool controlsEnabled = (FindObjectOfType<DialogUI>()?.isFinsihed ?? true);
+
+        return controlsEnabled && (gCheck.grounded || canCoyote);
     }
 }
