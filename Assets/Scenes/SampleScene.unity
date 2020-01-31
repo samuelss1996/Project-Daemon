@@ -1204,6 +1204,7 @@ MonoBehaviour:
   conversation: {fileID: 11400000, guid: 9d8a0c76958fe08449433f0cdc2ff970, type: 2}
   speakerPanel: {fileID: 622568998}
   timeBetweenChars: 0.025
+  caretChar: 9619
   isFinsihed: 0
 --- !u!1 &2117370063
 GameObject:

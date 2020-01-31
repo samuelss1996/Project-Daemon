@@ -21,4 +21,14 @@ public class SpeakerUI : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public void RemoveLastChar()
+    {
+        dialog.text = dialog.text.Substring(0, dialog.text.Length - 1);
+    }
+
+    public void AppendChar(char character)
+    {
+        dialog.text = string.Concat(dialog.text, character);
+    }
 }

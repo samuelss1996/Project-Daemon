@@ -8,6 +8,7 @@ public class DialogUI : MonoBehaviour
     public Conversation conversation;
     public GameObject speakerPanel;
     public float timeBetweenChars;
+    public char caretChar;
 
     // Other variables
     [HideInInspector]
@@ -19,6 +20,7 @@ public class DialogUI : MonoBehaviour
     // State
     private int activeLineIndex = 0;
     private bool animatingText = true;
+    private bool showingCaret = true;
 
     private void Start()
     {
@@ -40,6 +42,7 @@ public class DialogUI : MonoBehaviour
         speakerUI.Hide();
 
         AdvanceConversation();
+        StartCoroutine(CaretBlinkCR());
     }
 
     public void AdvanceConversation()
@@ -73,12 +76,31 @@ public class DialogUI : MonoBehaviour
     {
         animatingText = true;
 
-        for(int i = 0; i < text.Length; i++)
+        for(int i = -1; i < text.Length; i++)
         {
-            speakerUI.SetText(text.Substring(0, i + 1));
+            speakerUI.SetText(string.Concat(text.Substring(0, i + 1), caretChar));
             yield return new WaitForSeconds(timeBetweenChars);
         }
 
         animatingText = false;
+    }
+
+    private IEnumerator CaretBlinkCR()
+    {
+        while(true)
+        {
+            if(showingCaret && !animatingText)
+            {
+                speakerUI.RemoveLastChar();
+                showingCaret = false;
+            }
+            else if(!showingCaret)
+            {
+                speakerUI.AppendChar(caretChar);
+                showingCaret = true;
+            }
+
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 }
