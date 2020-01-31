@@ -7,6 +7,7 @@ public class DialogUI : MonoBehaviour
     // Editor parameters
     public Conversation conversation;
     public GameObject speakerPanel;
+    public float timeBetweenChars;
 
     // Other variables
     [HideInInspector]
@@ -17,6 +18,7 @@ public class DialogUI : MonoBehaviour
 
     // State
     private int activeLineIndex = 0;
+    private bool animatingText = true;
 
     private void Start()
     {
@@ -26,7 +28,7 @@ public class DialogUI : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetButtonUp("Jump") && !isFinsihed)
+        if(Input.GetButtonUp("Jump") && !animatingText && !isFinsihed)
         {
             AdvanceConversation();    
         }
@@ -63,7 +65,20 @@ public class DialogUI : MonoBehaviour
 
     void SetDialog(string text)
     {
-        speakerUI.SetText(text);
         speakerUI.Show();
+        StartCoroutine(AnimateTextCR(text));
+    }
+
+    private IEnumerator AnimateTextCR(string text)
+    {
+        animatingText = true;
+
+        for(int i = 0; i < text.Length; i++)
+        {
+            speakerUI.SetText(text.Substring(0, i + 1));
+            yield return new WaitForSeconds(timeBetweenChars);
+        }
+
+        animatingText = false;
     }
 }
