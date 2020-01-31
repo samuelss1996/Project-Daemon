@@ -21,7 +21,14 @@ public class MovementBehaviour : MonoBehaviour
 
     void Update()
     {
-        axis = Input.GetAxis("Horizontal");
+        if(FindObjectOfType<DialogUI>()?.isFinsihed ?? true)
+        {
+            axis = Input.GetAxis("Horizontal");
+        }
+        else
+        {
+            axis = 0;
+        }
     }
 
     private void FixedUpdate()

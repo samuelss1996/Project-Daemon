@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bdf78c0f4906164fa145ab4947b5fc5, type: 3}
   m_Name: TestConversation
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - text: Hello there!
+  - text: This is me.

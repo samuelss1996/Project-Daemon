@@ -39,7 +39,7 @@ public class JumpBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(jumpPressed && gCheck.grounded)
+        if(jumpPressed && gCheck.grounded && (FindObjectOfType<DialogUI>()?.isFinsihed ?? true))
         {
             rb.velocity = Vector2.up * jumpVelocity;
         }

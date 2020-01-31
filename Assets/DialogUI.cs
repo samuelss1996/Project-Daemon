@@ -26,7 +26,7 @@ public class DialogUI : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetButtonUp("Jump"))
+        if(Input.GetButtonUp("Jump") && !isFinsihed)
         {
             AdvanceConversation();    
         }
@@ -36,6 +36,8 @@ public class DialogUI : MonoBehaviour
     {
         conversation = newConversation;
         speakerUI.Hide();
+
+        AdvanceConversation();
     }
 
     public void AdvanceConversation()
