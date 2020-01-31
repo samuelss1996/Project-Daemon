@@ -5,9 +5,9 @@ using UnityEngine;
 public class JumpBehaviour : MonoBehaviour
 {
     // Editor
-    public float jumpVelocity = 5;
+    public float jumpVelocity = 15f;
     public float fallMultiplier = 2.5f;
-    public float lowJumpMultiplier = 2f;
+    public float lowJumpMultiplier = 10f;
 
     // Refs
     private Rigidbody2D rb;
@@ -20,7 +20,6 @@ public class JumpBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
 
     private void Update()
     {
