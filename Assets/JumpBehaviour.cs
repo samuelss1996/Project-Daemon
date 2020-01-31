@@ -11,6 +11,7 @@ public class JumpBehaviour : MonoBehaviour
 
     // Refs
     private Rigidbody2D rb;
+    private GroundCheck gCheck;
 
     // State
     private bool jumpPressed = false;
@@ -19,6 +20,7 @@ public class JumpBehaviour : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        gCheck = GetComponent<GroundCheck>();
     }
 
     private void Update()
@@ -37,7 +39,7 @@ public class JumpBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(jumpPressed)
+        if(jumpPressed && gCheck.grounded)
         {
             rb.velocity = Vector2.up * jumpVelocity;
         }
@@ -51,6 +53,7 @@ public class JumpBehaviour : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
         }
 
+        gCheck.grounded = false;
         jumpPressed = false;
     }
 }
