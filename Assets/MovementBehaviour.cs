@@ -7,9 +7,17 @@ public class MovementBehaviour : MonoBehaviour
     // Editor
     public float maxSpeed;
 
+    // Refs
+    private Animator animator;
+
     // State
     private float axis;
 
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -22,5 +30,7 @@ public class MovementBehaviour : MonoBehaviour
         currentVelocity.x = axis * maxSpeed;
 
         GetComponent<Rigidbody2D>().velocity = currentVelocity;
+
+        animator.SetFloat("xVelocity", currentVelocity.x);
     }
 }
