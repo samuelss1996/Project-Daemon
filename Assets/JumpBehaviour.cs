@@ -47,6 +47,8 @@ public class JumpBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
+        bool jumpStarted = false;
+
         if(previouslyGrounded && !gCheck.grounded)
         {
             StartCoroutine(CoyoteTimeCR());
@@ -55,7 +57,7 @@ public class JumpBehaviour : MonoBehaviour
         if(jumpPressed && CanJump())
         {
             rb.velocity = Vector2.up * jumpVelocity;
-            canCoyote = false;
+            jumpStarted = true;
         }
 
         if (rb.velocity.y < 0)
@@ -70,6 +72,12 @@ public class JumpBehaviour : MonoBehaviour
         previouslyGrounded = gCheck.grounded;
         gCheck.grounded = false;
         jumpPressed = false;
+
+        if(jumpStarted)
+        {
+            previouslyGrounded = false;
+            canCoyote = false;
+        }
     }
 
     private IEnumerator CoyoteTimeCR()
