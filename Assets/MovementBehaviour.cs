@@ -14,7 +14,6 @@ public class MovementBehaviour : MonoBehaviour
     void Update()
     {
         axis = Input.GetAxis("Horizontal");
-        Debug.Log(axis);
     }
 
     private void FixedUpdate()
