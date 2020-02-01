@@ -45,7 +45,7 @@ public class FragilePlatform : MonoBehaviour
             }
             else if(timeSinceTouch <= shakeTime + fadeTime)
             {
-                SetSmoothAlpha((timeSinceTouch - shakeTime) / fadeTime, true);
+                SpriteUtils.SetSmoothAlpha(sprite, originalColor, (timeSinceTouch - shakeTime) / fadeTime, true);
             }
             else if(timeSinceTouch <= shakeTime + fadeTime + restartTime)
             {
@@ -54,7 +54,7 @@ public class FragilePlatform : MonoBehaviour
             else if(timeSinceTouch <= shakeTime + 2 * fadeTime + restartTime)
             {
                 gameObject.GetComponent<BoxCollider2D>().enabled = true;
-                SetSmoothAlpha((timeSinceTouch - shakeTime - fadeTime - restartTime) / fadeTime, false);
+                SpriteUtils.SetSmoothAlpha(sprite, originalColor, (timeSinceTouch - shakeTime - fadeTime - restartTime) / fadeTime, false);
                 allowCycleStart = true;
             }
             else
@@ -74,17 +74,5 @@ public class FragilePlatform : MonoBehaviour
             shouldFall = true;
             timeSinceTouch = 0;
         }
-    }
-
-    private void SetSmoothAlpha(float lerp, bool startOpaque)
-    {
-        float min = startOpaque ? 1 : 0;
-        float max = startOpaque ? 0 : 1;
-
-        float currentAlpha = Mathf.SmoothStep(min, max, lerp);
-        Color currentColor = originalColor;
-        currentColor.a = currentAlpha;
-
-        sprite.color = currentColor;
     }
 }
