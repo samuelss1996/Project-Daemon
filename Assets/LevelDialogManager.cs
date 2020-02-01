@@ -34,6 +34,7 @@ public class LevelDialogManager : MonoBehaviour
             dialogUI.AdvanceConversation();
 
             shownEnd = true;
+            FindObjectOfType<MusicFader>().SemiFadeOut();
         }
     }
 

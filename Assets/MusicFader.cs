@@ -14,8 +14,8 @@ public class MusicFader : MonoBehaviour
     // State
     private float fadeTime;
     private float currentTime;
-    private float startVolume = 0;
-    private float endVolume = 0;
+    private float startVolume = 0.4f;
+    private float endVolume = 0.4f;
 
     // Start is called before the first frame update
     void Awake()
@@ -32,13 +32,18 @@ public class MusicFader : MonoBehaviour
 
     public void FadeIn()
     {
-        Fade(0, 1, fadeInTime);
-        music.Play();
+        Fade(0.4f, 1, fadeInTime);
+        //music.Play();
+    }
+
+    public void SemiFadeOut()
+    {
+        Fade(1, 0.4f, fadeInTime);
     }
 
     public void FadeOut()
     {
-        Fade(1, 0, fadeOutTime);
+        Fade(0.4f, 0, fadeOutTime);
     }
 
     private void Fade(float start, float end, float _fadeTime)
