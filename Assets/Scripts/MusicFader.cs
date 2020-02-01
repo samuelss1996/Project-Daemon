@@ -26,7 +26,7 @@ public class MusicFader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        music.volume = Mathf.SmoothStep(startVolume, endVolume, currentTime / fadeInTime);
+        music.volume = Mathf.SmoothStep(startVolume, endVolume, currentTime / fadeTime);
         currentTime += Time.deltaTime;
     }
 
@@ -43,7 +43,7 @@ public class MusicFader : MonoBehaviour
 
     public void FadeOut()
     {
-        Fade(0.4f, 0, fadeOutTime);
+        Fade(music.volume, 0, fadeOutTime);
     }
 
     private void Fade(float start, float end, float _fadeTime)

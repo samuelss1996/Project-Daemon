@@ -32,6 +32,8 @@ public class PlayerDeath : MonoBehaviour
             GetComponent<JumpBehaviour>().enabled = false;
 
             alive = false;
+
+            FindObjectOfType<LevelTransitioner>().RestartLevel();
         }
     }
 }

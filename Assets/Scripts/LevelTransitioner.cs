@@ -14,16 +14,21 @@ public class LevelTransitioner : MonoBehaviour
 
     public void NextLevel()
     {
-        StartCoroutine(NextLevelCR());
+        StartCoroutine(LoadLevelCR(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
-    private IEnumerator NextLevelCR()
+    public void RestartLevel()
+    {
+        StartCoroutine(LoadLevelCR(SceneManager.GetActiveScene().buildIndex));
+    }
+
+    private IEnumerator LoadLevelCR(int buildIndex)
     {
         FindObjectOfType<Fader>().FadeOut();
         FindObjectOfType<MusicFader>().FadeOut();
 
         yield return new WaitForSeconds(FindObjectOfType<Fader>().fadeTime);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(buildIndex);
     }
 }
