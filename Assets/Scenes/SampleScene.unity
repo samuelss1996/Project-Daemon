@@ -1083,7 +1083,8 @@ MonoBehaviour:
   jumpVelocity: 15
   fallMultiplier: 2.5
   lowJumpMultiplier: 10
-  coyoteTime: 0.2
+  coyoteTime: 0.15
+  jumpQueueTime: 0.1
   coyoteDebug: {fileID: 1352378780}
 --- !u!61 &1407814546
 BoxCollider2D:

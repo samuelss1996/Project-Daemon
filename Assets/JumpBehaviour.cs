@@ -10,6 +10,7 @@ public class JumpBehaviour : MonoBehaviour
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 10f;
     public float coyoteTime;
+    public float jumpQueueTime;
 
     public Text coyoteDebug;
 
@@ -33,7 +34,7 @@ public class JumpBehaviour : MonoBehaviour
     {
         if(Input.GetButtonDown("Jump"))
         {
-            jumpPressed = true;
+            StartCoroutine(JumpQueueCR());
             holdingJump = true;
         }
 
@@ -58,6 +59,7 @@ public class JumpBehaviour : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpVelocity;
             jumpStarted = true;
+            jumpPressed = false;
         }
 
         if (rb.velocity.y < 0)
@@ -71,7 +73,6 @@ public class JumpBehaviour : MonoBehaviour
 
         previouslyGrounded = gCheck.grounded;
         gCheck.grounded = false;
-        jumpPressed = false;
 
         if(jumpStarted)
         {
@@ -85,6 +86,13 @@ public class JumpBehaviour : MonoBehaviour
         canCoyote = true;
         yield return new WaitForSeconds(coyoteTime);
         canCoyote = false;
+    }
+
+    private IEnumerator JumpQueueCR()
+    {
+        jumpPressed = true;
+        yield return new WaitForSeconds(jumpQueueTime);
+        jumpPressed = false;
     }
 
     private bool CanJump()
