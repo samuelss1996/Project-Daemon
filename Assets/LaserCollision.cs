@@ -27,6 +27,11 @@ public class LaserCollision : MonoBehaviour
 
         if (hit.collider != null) {
             hitPosition = transform.position + hit.distance * transform.up;
+
+            if(hit.collider.CompareTag("Player"))
+            {
+                FindObjectOfType<PlayerDeath>().Die();
+            }
         }
         else
         {
