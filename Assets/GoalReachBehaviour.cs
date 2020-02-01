@@ -8,7 +8,8 @@ public class GoalReachBehaviour : MonoBehaviour
     private Rigidbody2D rb;
 
     // State
-    private bool shouldAttach = false;
+    [HideInInspector]
+    public bool shouldAttach = false;
     private float attachSpeed;
     private Vector2 targetPosition;
 

@@ -9,6 +9,7 @@ public class MovementBehaviour : MonoBehaviour
 
     // Refs
     private Animator animator;
+    private GoalReachBehaviour goal;
 
     // State
     private float axis;
@@ -17,11 +18,12 @@ public class MovementBehaviour : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        goal = GetComponent<GoalReachBehaviour>();
     }
 
     void Update()
     {
-        if(FindObjectOfType<DialogUI>()?.isFinsihed ?? true)
+        if((FindObjectOfType<DialogUI>()?.isFinsihed ?? true) && !goal.shouldAttach)
         {
             axis = Input.GetAxis("Horizontal");
         }
