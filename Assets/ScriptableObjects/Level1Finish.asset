@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bdf78c0f4906164fa145ab4947b5fc5, type: 3}
+  m_Name: Level1Finish
+  m_EditorClassIdentifier: 
+  lines:
+  - text: 'This was just a test.
+
+      That RED sector was not real.'
+  - text: "I did not tell you that it was test before,\nbecause when subjects know
+      they are being tested, \ntheir behaviours might present incosistencies."
+  - text: 'Anyway, I do not need to clarify this nor anything.
+
+      I rule this place, and you will obbey my word.'
+  - text: 'Since you passed this test you will be sent to the
+
+      hard disk to repair actual sectors.'
