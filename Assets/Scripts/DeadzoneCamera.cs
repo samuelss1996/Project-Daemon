@@ -30,7 +30,7 @@ public class DeadzoneCamera : MonoBehaviour
         }
     }
 
-    public void Update()
+    public void LateUpdate()
     {
         float localX = target.transform.position.x - transform.position.x;
         float localY = target.transform.position.y - transform.position.y;
