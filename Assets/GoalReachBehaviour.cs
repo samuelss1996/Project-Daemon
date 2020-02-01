@@ -29,7 +29,7 @@ public class GoalReachBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Goal"))
+        if(collision.CompareTag("Goal") && !shouldAttach)
         {
             attachSpeed = rb.velocity.magnitude;
             shouldAttach = true;
