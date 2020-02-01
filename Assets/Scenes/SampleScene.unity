@@ -1623,6 +1623,8 @@ MonoBehaviour:
   shakeTime: 0.3
   shakeSpeed: 50
   shakeStrength: 0.05
+  fadeTime: 0.5
+  restartTime: 3
 --- !u!1 &1462890736
 GameObject:
   m_ObjectHideFlags: 0
