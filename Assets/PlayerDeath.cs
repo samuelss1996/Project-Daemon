@@ -10,6 +10,9 @@ public class PlayerDeath : MonoBehaviour
     // Refs
     private SpriteRenderer sprite;
 
+    // State
+    private bool alive = true;
+
     private void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -17,13 +20,18 @@ public class PlayerDeath : MonoBehaviour
 
     public void Die()
     {
-        sprite.enabled = false;
-        deathParticles.Play();
+        if(alive)
+        {
+            sprite.enabled = false;
+            deathParticles.Play();
 
-        gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+            gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        GetComponent<MovementBehaviour>().enabled = false;
-        GetComponent<JumpBehaviour>().enabled = false;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponent<MovementBehaviour>().enabled = false;
+            GetComponent<JumpBehaviour>().enabled = false;
+
+            alive = false;
+        }
     }
 }
