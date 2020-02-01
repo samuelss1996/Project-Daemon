@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelTransitioner : MonoBehaviour
 {
@@ -8,21 +9,21 @@ public class LevelTransitioner : MonoBehaviour
     void Start()
     {
         FindObjectOfType<Fader>().FadeIn();
-        FindObjectOfType<MusicFader>().FadeIn();
+        FindObjectOfType<LevelDialogManager>().ShowStartDialog();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void NextLevel()
     {
-        if(Input.GetKeyDown("t"))
-        {
-            NextLevel();
-        }
+        StartCoroutine(NextLevelCR());
     }
 
-    private void NextLevel()
+    private IEnumerator NextLevelCR()
     {
         FindObjectOfType<Fader>().FadeOut();
         FindObjectOfType<MusicFader>().FadeOut();
+
+        yield return new WaitForSeconds(FindObjectOfType<Fader>().fadeTime);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

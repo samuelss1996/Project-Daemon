@@ -24,7 +24,7 @@ public class SpeakerUI : MonoBehaviour
 
     public void RemoveLastChar()
     {
-        dialog.text = dialog.text.Substring(0, dialog.text.Length - 1);
+        dialog.text = dialog.text.Substring(0, Mathf.Max(0, dialog.text.Length - 1));
     }
 
     public void AppendChar(char character)

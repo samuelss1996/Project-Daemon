@@ -33,6 +33,7 @@ public class MusicFader : MonoBehaviour
     public void FadeIn()
     {
         Fade(0, 1, fadeInTime);
+        music.Play();
     }
 
     public void FadeOut()

@@ -18,14 +18,16 @@ public class DialogUI : MonoBehaviour
     private SpeakerUI speakerUI;
 
     // State
-    private int activeLineIndex = 0;
+    private int activeLineIndex;
     private bool animatingText = true;
     private bool showingCaret = true;
 
-    private void Start()
+    private void Awake()
     {
         speakerUI = speakerPanel.GetComponent<SpeakerUI>();
+
         SetConversation(conversation);
+        StartCoroutine(CaretBlinkCR());
     }
 
     private void Update()
@@ -39,10 +41,11 @@ public class DialogUI : MonoBehaviour
     public void SetConversation(Conversation newConversation)
     {
         conversation = newConversation;
-        speakerUI.Hide();
+        activeLineIndex = 0;
+        isFinsihed = false;
+        animatingText = true;
 
-        AdvanceConversation();
-        StartCoroutine(CaretBlinkCR());
+        speakerUI.Hide();
     }
 
     public void AdvanceConversation()
@@ -57,6 +60,8 @@ public class DialogUI : MonoBehaviour
             speakerUI.Hide();
             activeLineIndex = 0;
             isFinsihed = true;
+
+            FindObjectOfType<LevelDialogManager>().DialogFinished();
         }
     }
 

@@ -30,6 +30,11 @@ public class GoalBehaviour : MonoBehaviour
         {
             sprite.color = Color.Lerp(originalColor, repairedColor, Mathf.SmoothStep(0, 1, Mathf.Min(animationTime / duration, 1)));
             animationTime += Time.deltaTime;
+
+            if(animationTime / duration >= 1)
+            {
+                FindObjectOfType<LevelDialogManager>().ShownEndDialog();
+            }
         }
         else
         {
