@@ -163,10 +163,10 @@ MonoBehaviour:
   target: {fileID: 1407814541}
   deadzone:
     serializedVersion: 2
-    x: -1
-    y: -1
+    x: 0
+    y: -2
     width: 2
-    height: 2
+    height: 4
   smoothPos: {x: 140767, y: -4.459295, z: -20}
   limits:
   - serializedVersion: 2

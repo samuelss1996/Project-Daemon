@@ -75,6 +75,7 @@ public class DeadzoneCamera : MonoBehaviour
 
         Vector3 current = transform.position;
         current.x = smoothPos.x; // we don't smooth horizontal movement
+        current.y = smoothPos.y;
 
         if(limits[0].Contains(target.transform.position))
         {
