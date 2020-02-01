@@ -13,7 +13,17 @@ MonoBehaviour:
   m_Name: Level2End
   m_EditorClassIdentifier: 
   lines:
-  - text: Hi, daemon 0x05f0c38a.
-  - text: My name is Kernel. I run this place.
-  - text: Your function is to repair the RED sectors.
-  - text: Proceed.
+  - text: Great.
+  - text: I knew you could do it.
+  - text: 'That was not a motivational sentence.
+
+'
+  - text: I just knew, because I know everything.
+  - text: If you could not do it, I would also know.
+  - text: Well, to be fair, there is one thing that I do not know.
+  - text: All of a sudden there are RED sectors everywhere.
+  - text: 'This is not usual in a modern system like this one,
+
+      something strange must be happenning...'
+  - text: I will investigate the issue.
+  - text: 

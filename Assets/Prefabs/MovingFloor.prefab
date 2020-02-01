@@ -121,4 +121,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   relativeEndPosition: {x: 10, y: 10, z: 0}
-  speed: 20
+  periodLength: 2.4

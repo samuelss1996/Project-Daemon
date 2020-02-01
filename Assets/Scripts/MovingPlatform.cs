@@ -6,7 +6,7 @@ public class MovingPlatform : MonoBehaviour
 {
     // Editor
     public Vector3 relativeEndPosition;
-    public float speed;
+    public float periodLength;
 
     // State
     private Vector3 startPosition;
@@ -20,8 +20,9 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float normalizedSpeed = Mathf.Sqrt(speed / relativeEndPosition.magnitude);
-        float currentLerp = -Mathf.Cos(Time.time * normalizedSpeed) * 0.5f + 0.5f;
+        //float normalizedSpeed = Mathf.Sqrt(speed / relativeEndPosition.magnitude);
+        float time = Camera.main.gameObject.GetComponent<AudioSource>().time;
+        float currentLerp = -Mathf.Sin(2 * Mathf.PI * time / periodLength) * 0.5f + 0.5f;
 
         transform.position = Vector3.Lerp(startPosition, startPosition + relativeEndPosition, currentLerp);
     }
