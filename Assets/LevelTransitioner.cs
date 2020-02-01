@@ -8,6 +8,7 @@ public class LevelTransitioner : MonoBehaviour
     void Start()
     {
         FindObjectOfType<Fader>().FadeIn();
+        FindObjectOfType<MusicFader>().FadeIn();
     }
 
     // Update is called once per frame
@@ -22,5 +23,6 @@ public class LevelTransitioner : MonoBehaviour
     private void NextLevel()
     {
         FindObjectOfType<Fader>().FadeOut();
+        FindObjectOfType<MusicFader>().FadeOut();
     }
 }
