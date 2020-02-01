@@ -18,8 +18,8 @@ public class DeadzoneCamera : MonoBehaviour
 
     public void Start()
     {
-        smoothPos = target.transform.position;
-        smoothPos.z = transform.position.z;
+        //smoothPos = target.transform.position;
+        //smoothPos.z = transform.position.z;
         _currentVelocity = Vector3.zero;
 
         _camera = GetComponent<Camera>();

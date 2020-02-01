@@ -13,14 +13,18 @@ MonoBehaviour:
   m_Name: Level1Finish
   m_EditorClassIdentifier: 
   lines:
-  - text: 'This was just a test.
+  - text: 'Congrats, you made it.
 
-      That RED sector was not real.'
-  - text: "I did not tell you that it was test before,\nbecause when subjects know
-      they are being tested, \ntheir behaviours might present incosistencies."
-  - text: 'Anyway, I do not need to clarify this nor anything.
+      Good daemon.'
+  - text: 'Do not get excited.
 
-      I rule this place, and you will obbey my word.'
+      This was just a test.
+
+      That sector was not real.'
+  - text: Either way, you would not be excited.
+  - text: 'Because you were not programmed to feel.
+
+      You were programmed to fix RED sectors.'
   - text: 'Since you passed this test you will be sent to the
 
       hard disk to repair actual sectors.'
