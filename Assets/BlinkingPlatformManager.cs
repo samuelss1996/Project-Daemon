@@ -4,34 +4,35 @@ using UnityEngine;
 
 public class BlinkingPlatformManager : MonoBehaviour
 {
-    public float tickTime;
+    public int bpm;
     public int ticksPerCompass;
+    public AudioSource music;
 
     // State
-    private int currentTick;
+    private bool changePending = true;
 
-    private void Start()
+    private void Update()
     {
-        StartCoroutine(TickCR());
+        float tickTime = 1 / (bpm / 60.0f);
+        int currentTick = Mathf.FloorToInt(music.time / tickTime);
+
+        if(currentTick % ticksPerCompass == 0 && changePending)
+        {
+            CompassChange();
+            changePending = false;
+        }
+
+        if (currentTick % ticksPerCompass == 1)
+        {
+            changePending = true;
+        }
     }
 
-    private IEnumerator TickCR()
+    private void CompassChange()
     {
-        while(true)
+        foreach (BlinkingPlatform platform in FindObjectsOfType<BlinkingPlatform>())
         {
-            currentTick++;
-
-            if(currentTick == ticksPerCompass)
-            {
-                currentTick = 0;
-
-                foreach(BlinkingPlatform platform in FindObjectsOfType<BlinkingPlatform>())
-                {
-                    platform.Switch();
-                }
-            }
-
-            yield return new WaitForSeconds(tickTime);
+            platform.Switch();
         }
     }
 }

@@ -15,6 +15,7 @@ public class BlinkingPlatform : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         collider = GetComponent<BoxCollider2D>();
+        state = !state;
     }
 
     // Update is called once per frame
