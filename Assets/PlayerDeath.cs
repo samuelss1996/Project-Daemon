@@ -21,5 +21,9 @@ public class PlayerDeath : MonoBehaviour
         deathParticles.Play();
 
         gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<MovementBehaviour>().enabled = false;
+        GetComponent<JumpBehaviour>().enabled = false;
     }
 }
