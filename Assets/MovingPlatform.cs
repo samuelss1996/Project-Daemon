@@ -10,6 +10,7 @@ public class MovingPlatform : MonoBehaviour
 
     // State
     private Vector3 startPosition;
+    private Transform previousPlayerParent;
 
     private void Awake()
     {
@@ -23,5 +24,22 @@ public class MovingPlatform : MonoBehaviour
         float currentLerp = -Mathf.Cos(Time.time * normalizedSpeed) * 0.5f + 0.5f;
 
         transform.position = Vector3.Lerp(startPosition, startPosition + relativeEndPosition, currentLerp);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            previousPlayerParent = collision.gameObject.transform.parent;
+            collision.gameObject.transform.parent = transform;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.transform.parent = previousPlayerParent;
+        }
     }
 }
