@@ -14,7 +14,7 @@ public class LevelTransitioner : MonoBehaviour
 
     public void NextLevel()
     {
-        Destroy(GameObject.FindGameObjectWithTag("RestartKeeper"));
+        FindObjectOfType<RestartKeeper>().Clear();
         StartCoroutine(LoadLevelCR(SceneManager.GetActiveScene().buildIndex + 1));
     }
 

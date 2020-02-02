@@ -13,4 +13,9 @@ public class RestartKeeper : MonoBehaviour
     {
         DontDestroyOnLoad(this);
     }
+
+    public void Clear()
+    {
+        dialogShown = bossReached = false;
+    }
 }
