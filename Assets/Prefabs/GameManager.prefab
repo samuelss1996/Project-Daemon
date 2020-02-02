@@ -433,11 +433,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 32aa9d3d0a2636947aeff3670c86b82d, type: 2}
   - {fileID: 11400000, guid: 87bf1d8198095fd4ca0d8c28cb78a5b0, type: 2}
   - {fileID: 11400000, guid: 8140a130592d432458a6e9c446d7d4e0, type: 2}
+  - {fileID: 11400000, guid: 09e55a734fe6cb1449375896d815dd21, type: 2}
+  - {fileID: 11400000, guid: 1704abbade1f44b4dbba5f3095f2caa7, type: 2}
   endDialogs:
   - {fileID: 11400000, guid: 7adb6d2ecb734194680143ffb575b750, type: 2}
   - {fileID: 11400000, guid: f591f4cc97f70dd4e871b0b571e01cb1, type: 2}
   - {fileID: 11400000, guid: d5b3549ea5fc7cf44bb866f6805f3982, type: 2}
   - {fileID: 11400000, guid: e7e5512dff1374f4da82e10a1cce2598, type: 2}
+  - {fileID: 11400000, guid: 492f93ce2cace0a46ae5e57dcf53d03a, type: 2}
+  - {fileID: 11400000, guid: ad8307707f8f87e4f829ca9143169ca9, type: 2}
 --- !u!1 &1771277041625198160
 GameObject:
   m_ObjectHideFlags: 0

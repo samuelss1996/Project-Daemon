@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bdf78c0f4906164fa145ab4947b5fc5, type: 3}
-  m_Name: Level3Start
+  m_Name: Level4End
   m_EditorClassIdentifier: 
   lines:
-  - text: I investigated the issue.
-  - text: That was fast, right?
-  - text: It took me only 0.02 seconds in human time.
-  - text: There seems to be a virus somewhere in the system.
-  - text: I will analyse the hard disk to locate the threat.
-  - text: Until I finish doing that, just keeping doing your task.
-  - text: Repair the RED sectors.
-  - text: Proceed.
+  - text: I guess that was not easy.
+  - text: Good job.
+  - text: I have gathered all the information that I needed.
+  - text: I know the exact location of the virus.
+  - text: I will now take you to that location.

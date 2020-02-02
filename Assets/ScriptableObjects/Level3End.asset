@@ -13,7 +13,16 @@ MonoBehaviour:
   m_Name: Level3End
   m_EditorClassIdentifier: 
   lines:
-  - text: Hi, daemon 0x05f0c38a.
-  - text: My name is Kernel. I run this place.
-  - text: Your function is to repair the RED sectors.
-  - text: Proceed.
+  - text: I have good and bad news.
+  - text: Which one do you want to hear first?
+  - text: '...'
+  - text: '...'
+  - text: Oh. I forgot you were not programmed to talk.
+  - text: Then, I will start with the good news first.
+  - text: I have almost located the virus.
+  - text: In a few milliseconds I will have its exact location in the disk.
+  - text: And the bad news...
+  - text: Oh wait... There is another RED sector.
+  - text: 'I will tell you the bad news after teleporting you were
+
+      the new RED sector is.'
