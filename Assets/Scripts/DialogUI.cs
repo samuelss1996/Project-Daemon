@@ -92,6 +92,7 @@ public class DialogUI : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenChars);
         }
 
+        showingCaret = true;
         animatingText = false;
     }
 
@@ -99,15 +100,18 @@ public class DialogUI : MonoBehaviour
     {
         while(true)
         {
-            if(showingCaret && !animatingText)
+            if(!animatingText)
             {
-                speakerUI.RemoveLastChar();
-                showingCaret = false;
-            }
-            else if(!showingCaret)
-            {
-                speakerUI.AppendChar(caretChar);
-                showingCaret = true;
+                if (showingCaret)
+                {
+                    speakerUI.RemoveLastChar();
+                    showingCaret = false;
+                }
+                else
+                {
+                    speakerUI.AppendChar(caretChar);
+                    showingCaret = true;
+                }
             }
 
             yield return new WaitForSeconds(0.5f);
