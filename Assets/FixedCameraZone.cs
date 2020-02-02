@@ -6,6 +6,7 @@ public class FixedCameraZone : MonoBehaviour
 {
     // Editor
     public float moveTime;
+    public Animator doorAnimator;
 
     // State
     private Vector3 initialPos;
@@ -35,6 +36,7 @@ public class FixedCameraZone : MonoBehaviour
             Camera.main.gameObject.GetComponent<DeadzoneCamera>().enabled = false;
             initialPos = Camera.main.gameObject.transform.position;
             move = true;
+            doorAnimator.SetTrigger("Close");
         }
     }
 }

@@ -495,6 +495,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 93013372}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &118834641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2809398107188507467, guid: 8da91cd8c74daa244a860fca57b4731f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1172123699}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &118834642
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118834641}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 999a0b37774efbe469f3ac409e400163, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &120569978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2251,6 +2276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTime: 1
+  doorAnimator: {fileID: 118834642}
 --- !u!61 &433239008
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2275,7 +2301,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.92, y: 1000}
+  m_Size: {x: 12, y: 1000}
   m_EdgeRadius: 0
 --- !u!4 &433239010
 Transform:
@@ -2285,7 +2311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433239006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 227.0304, y: 6.5, z: -80}
+  m_LocalPosition: {x: 230.1765, y: 6.5, z: -80}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1481160110}
@@ -5180,7 +5206,7 @@ PrefabInstance:
     - target: {fileID: 2809398107188507469, guid: 8da91cd8c74daa244a860fca57b4731f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 227.0304
+      value: 230.1765
       objectReference: {fileID: 0}
     - target: {fileID: 2809398107188507469, guid: 8da91cd8c74daa244a860fca57b4731f,
         type: 3}
@@ -5235,7 +5261,7 @@ PrefabInstance:
     - target: {fileID: 2809398107188507469, guid: 8da91cd8c74daa244a860fca57b4731f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 13.444768
+      value: 19.73385
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8da91cd8c74daa244a860fca57b4731f, type: 3}
@@ -10195,7 +10221,7 @@ PrefabInstance:
     - target: {fileID: 2809398107188507469, guid: 8da91cd8c74daa244a860fca57b4731f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 233.8
+      value: 239.6
       objectReference: {fileID: 0}
     - target: {fileID: 2809398107188507469, guid: 8da91cd8c74daa244a860fca57b4731f,
         type: 3}
