@@ -32,6 +32,10 @@ public class LaserCollision : MonoBehaviour
             {
                 FindObjectOfType<PlayerDeath>().Die();
             }
+            else if(hit.collider.CompareTag("Virus"))
+            {
+                FindObjectOfType<VirusDeath>().Die();
+            }
         }
         else
         {

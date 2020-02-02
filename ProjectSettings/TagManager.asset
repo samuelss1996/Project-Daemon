@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Goal
   - AutofallTrigger
+  - Virus
   layers:
   - Default
   - TransparentFX
