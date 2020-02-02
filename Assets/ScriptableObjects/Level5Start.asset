@@ -13,16 +13,14 @@ MonoBehaviour:
   m_Name: Level5Start
   m_EditorClassIdentifier: 
   lines:
-  - text: There you are.
-  - text: So, now I have to tell you the bad news...
-  - text: Right... The bad news are...
-  - text: Well, basically the virus has traced back my analysis.
-  - text: Now it is aware that I am trying to eliminate it.
-  - text: And also that you are fixing the RED sectors it is damaging.
-  - text: And...
-  - text: It will try to eliminate you.
-  - text: It might use LASERS to delete you from the disk.
-  - text: 'Either way, the only thing you can do now is repair
+  - text: This is the disk address of the virus.
+  - text: You should be able to see it somewhere here.
+  - text: "You will recognize it by its shape (/\u25BC\\)."
+  - text: Another important tip.
+  - text: I analysed its code, and it can destroy any static data.
+  - text: 'Therefore, it might try to eliminate you by deleting
 
-      this RED sector.'
+      some of the white blocks.'
+  - text: Your purpose now is...
+  - text: Exterminate virus.
   - text: Proceed.
