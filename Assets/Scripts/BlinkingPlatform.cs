@@ -6,6 +6,8 @@ public class BlinkingPlatform : MonoBehaviour
 {
     // Editor
     public bool state;
+    public Color colorA;
+    public Color colorB;
 
     // Refs
     private SpriteRenderer sprite;
@@ -15,6 +17,16 @@ public class BlinkingPlatform : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         collider = GetComponent<BoxCollider2D>();
+
+        if(state)
+        {
+            sprite.color = colorA;
+        }
+        else
+        {
+            sprite.color = colorB;
+        }
+
         state = !state;
     }
 
