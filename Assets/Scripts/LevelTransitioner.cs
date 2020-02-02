@@ -9,14 +9,14 @@ public class LevelTransitioner : MonoBehaviour
     void Start()
     {
         FindObjectOfType<Fader>().FadeIn();
-        FindObjectOfType<LevelDialogManager>().ShowStartDialog();
+        FindObjectOfType<LevelDialogManager>()?.ShowStartDialog();
     }
 
     public void NextLevel()
     {
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
 
-        FindObjectOfType<RestartKeeper>().Clear();
+        FindObjectOfType<RestartKeeper>()?.Clear();
 
         if(currentIndex == 5)
         {
@@ -38,7 +38,7 @@ public class LevelTransitioner : MonoBehaviour
     private IEnumerator LoadLevelCR(int buildIndex)
     {
         FindObjectOfType<Fader>().FadeOut();
-        FindObjectOfType<MusicFader>().FadeOut();
+        FindObjectOfType<MusicFader>()?.FadeOut();
 
         yield return new WaitForSeconds(FindObjectOfType<Fader>().fadeTime);
 
