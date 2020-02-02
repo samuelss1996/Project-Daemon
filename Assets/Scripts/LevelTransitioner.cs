@@ -14,8 +14,20 @@ public class LevelTransitioner : MonoBehaviour
 
     public void NextLevel()
     {
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+
         FindObjectOfType<RestartKeeper>().Clear();
-        StartCoroutine(LoadLevelCR(SceneManager.GetActiveScene().buildIndex + 1));
+
+        if(currentIndex == 5)
+        {
+            FindObjectOfType<PlayerDeath>().DieVisually();
+            StartCoroutine(LoadLevelCR(0));
+            Destroy(GameObject.FindGameObjectWithTag("RestartKeeper"));
+        }
+        else
+        {
+            StartCoroutine(LoadLevelCR(currentIndex + 1));
+        }
     }
 
     public void RestartLevel()

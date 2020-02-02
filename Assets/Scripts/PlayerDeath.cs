@@ -22,6 +22,15 @@ public class PlayerDeath : MonoBehaviour
     {
         if(alive)
         {
+            DieVisually();
+            FindObjectOfType<LevelTransitioner>().RestartLevel();
+        }
+    }
+
+    public void DieVisually()
+    {
+        if(alive)
+        {
             sprite.enabled = false;
             deathParticles.Play();
 
@@ -32,8 +41,6 @@ public class PlayerDeath : MonoBehaviour
             GetComponent<JumpBehaviour>().enabled = false;
 
             alive = false;
-
-            FindObjectOfType<LevelTransitioner>().RestartLevel();
         }
     }
 }
