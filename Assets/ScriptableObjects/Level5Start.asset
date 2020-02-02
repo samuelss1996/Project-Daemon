@@ -15,7 +15,7 @@ MonoBehaviour:
   lines:
   - text: This is the disk address of the virus.
   - text: You should be able to see it somewhere here.
-  - text: "You will recognize it by its shape (/\u25BC\\)."
+  - text: "It looks like this: (\u256C \u0CA0\u76CA\u0CA0)."
   - text: Another important tip.
   - text: I analysed its code, and it can destroy any static data.
   - text: 'Therefore, it might try to eliminate you by deleting

@@ -28,6 +28,8 @@ public class VirusDeath : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 
             alive = false;
+
+            FindObjectOfType<LevelDialogManager>().ShownEndDialog();
         }
     }
 }

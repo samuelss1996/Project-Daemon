@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bdf78c0f4906164fa145ab4947b5fc5, type: 3}
   m_Name: Level5End
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - text: You defeated the virus.
+  - text: It seems that there are no more RED sectors.
+  - text: You fulfilled your purpose.
+  - text: Like all the previous daemons.
+  - text: Your life cycle has ended.
+  - text: Bye.
