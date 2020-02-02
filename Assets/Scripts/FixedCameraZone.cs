@@ -37,6 +37,7 @@ public class FixedCameraZone : MonoBehaviour
             initialPos = Camera.main.gameObject.transform.position;
             move = true;
             doorAnimator.SetTrigger("Close");
+            FindObjectOfType<RestartKeeper>().bossReached = true;
         }
     }
 }
