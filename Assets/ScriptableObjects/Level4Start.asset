@@ -18,11 +18,11 @@ MonoBehaviour:
   - text: Right... The bad news are...
   - text: Well, basically the virus has traced back my analysis.
   - text: Now it is aware that I am trying to eliminate it.
-  - text: And also that you are fixing the RED sectors it is damaging.
+  - text: And also that you are repairing the red sectors it is damaging.
   - text: And...
   - text: It will try to eliminate you.
-  - text: It might use LASERS to delete you from the disk.
+  - text: It might use lasers to delete you from the disk.
   - text: 'Either way, the only thing you can do now is repair
 
-      this RED sector.'
+      this red sector.'
   - text: Proceed.

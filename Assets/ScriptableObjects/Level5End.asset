@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - text: You defeated the virus.
-  - text: It seems that there are no more RED sectors.
+  - text: It seems that there are no more red sectors.
   - text: You fulfilled your purpose.
   - text: Like all the previous daemons.
   - text: Your life cycle has ended.
