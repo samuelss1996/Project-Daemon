@@ -20,6 +20,12 @@ public class LevelDialogManager : MonoBehaviour
         if(!shownStart)
         {
             dialogUI.SetConversation(startDialogs[SceneManager.GetActiveScene().buildIndex]);
+
+            if(FindObjectOfType<RestartKeeper>().dialogShown)
+            {
+                dialogUI.SetConversationFinished();
+            }
+
             dialogUI.AdvanceConversation();
 
             shownStart = true;
@@ -44,6 +50,7 @@ public class LevelDialogManager : MonoBehaviour
         {
             FindObjectOfType<MusicFader>().FadeIn();
             startDialog = false;
+            FindObjectOfType<RestartKeeper>().dialogShown = true;
         }
         else
         {

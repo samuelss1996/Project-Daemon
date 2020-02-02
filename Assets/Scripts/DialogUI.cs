@@ -48,6 +48,11 @@ public class DialogUI : MonoBehaviour
         speakerUI.Hide();
     }
 
+    public void SetConversationFinished()
+    {
+        activeLineIndex = conversation.lines.Length;
+    }
+
     public void AdvanceConversation()
     {
         if(activeLineIndex < conversation.lines.Length)

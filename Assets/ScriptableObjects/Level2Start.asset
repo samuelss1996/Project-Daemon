@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level2Start
   m_EditorClassIdentifier: 
   lines:
-  - text: Welcome to the actual hard disk.
+  - text: Welcome to the hard disk.
   - text: This looks very similar to the test room, don't you agree?
   - text: Of course you do.
   - text: 'That is because I designed that test room myself,
