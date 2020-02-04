@@ -1,0 +1,67 @@
+Theme: repair
+
+Diversifiers:
+- Language independent
+- III (no more than three items)
+- 
+
+
+Eres un personaje que repara sectores dañados del PC
+	x Transformando cuadrados rojos en verdes
+	x Plataformeo
+	x Se pueden tener plataformas que se activen y desactiven según in ciclo de reloj (binario) (mostrar onda cuadrada de fondo o algo)
+	x Add color aberration PostFX similar to data wing
+	x Coyote time, and accumulate input from previous frames, polish jump in general, REDUCE MOBILITY IN AIR
+	x Fluid camera (2d game kit from standard assets)
+	x Dialogue system
+	x Automate dialog level start level end. Fade in music on dialog end
+	x Fade in/out entre escenas. Fade out music
+	x Have low volume music when dialogs pop instead
+	x Boss final: virus. tiene unos cuadrados que lanzan laser, tenemos que ponernos detrás de el con respecto al láser para que le den a él
+	x Level final: todo se va destruyendo detrás de ti hasta que llegas a la plataforma del boss
+	x Swap levels 2 and 3 (again)
+	x Do not show dialog on restart
+	x Boss battle proper respawn
+	x Add characters to dialogs
+	x Kill character in the end
+	(?) Try to make the character always jump after dialog.
+	x Main menu
+	- TEST boss respawn
+	- Text color
+	- Sound effects
+	- Make sure that everything has audio and video feedback. Audio must be insanely satisfying
+	- Add particles on the floor when walking or landing
+	- Perhaps make horizontal movement smoother
+
+Historia:
+	- Personaje principal debe ser un romboide en 3D que gire dando vueltas y botes (seguramente azul, pues rojo y verde ya hay). Sino una cara seria y ya (en ASCII)
+	- En la narrativa, hay que empatizar con quien habla, no debe ser malo, ya que nosotros no hablamos y con alguien habrá que empatizar
+	- Perder = pantallazo azul?
+	- Dialogo siempre a principio y final de nivel
+
+Mecánicas:
+	x Bliking platforms
+	x Moving platforms
+	x Platforms that fall behind you
+	x Platforms that disappear when you step on them (they should shake or something when you land on them)
+	x Lasers that follow you and hurt you
+	x DIE
+
+Music:
+	- Final boss: top gun
+	- Generic level 1: retro moves
+	- Generic level 2: tron
+	- Rythm level: neon lights
+
+Bugs:
+	x Level 2, dialog caret visible twice in puntos suspensivos
+
+Ditched sentences
+
+I did not tell you that it was test before,
+because when subjects know they are being tested, 
+their behaviours might present incosistencies.
+
+Anyway, I do not need to clarify this nor anything.
+I rule this place, and you will obbey my word.
+
